@@ -1,27 +1,17 @@
 /* ==========================================================================
-   طائرة التحكم عن بعد النفاثة - أنماط وتنسيقات التصميم المستقبلي الخرافي
+   طائرة التحكم عن بعد - أنماط التصميم النظيف والهادئ (Clean & Fast E-Commerce)
    ========================================================================== */
 
 :root {
-  --bg-primary: #070d19;
-  --bg-secondary: #0d172a;
-  --bg-card: rgba(15, 23, 42, 0.75);
-  --bg-card-hover: rgba(30, 41, 59, 0.85);
-  --border-color: rgba(56, 189, 248, 0.2);
-  --border-glow: rgba(56, 189, 248, 0.6);
-  --neon-blue: #0ea5e9;
-  --neon-cyan: #06b6d4;
-  --neon-blue-light: #38bdf8;
-  --accent-gold: #f59e0b;
-  --accent-green: #10b981;
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --text-dim: #64748b;
-  --gradient-primary: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
-  --gradient-accent: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-  --gradient-green: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  --shadow-neon: 0 0 25px rgba(14, 165, 233, 0.45);
-  --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  --font-main: 'Tajawal', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --color-primary: #1d4ed8;
+  --color-primary-hover: #1e40af;
+  --color-success: #15803d;
+  --color-success-hover: #166534;
+  --color-text: #0f172a;
+  --color-muted: #64748b;
+  --color-border: #e2e8f0;
+  --color-bg-soft: #f8fafc;
 }
 
 * {
@@ -33,238 +23,97 @@
 
 html {
   scroll-behavior: smooth;
-  font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: var(--bg-primary);
-  color: var(--text-main);
+  font-family: var(--font-main);
+  background-color: #ffffff;
+  color: var(--color-text);
   direction: rtl;
 }
 
 body {
   overflow-x: hidden;
-  background: radial-gradient(circle at 50% 0%, #0f224a 0%, #070d19 65%);
-  background-attachment: fixed;
-  min-height: 100vh;
+  background-color: #ffffff;
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Background sci-fi grid overlay */
-.bg-grid-pattern {
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+/* إزالة أي تشويش أو تهنيج على المعالج */
+.card-clean {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Glassmorphism card utility */
-.glass-panel {
-  background: var(--bg-card);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--border-color);
-  border-radius: 1.25rem;
-  box-shadow: var(--shadow-card);
+.card-clean:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07);
 }
 
-.glass-panel-glow {
-  background: var(--bg-card);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--border-color);
-  border-radius: 1.25rem;
-  box-shadow: var(--shadow-card), 0 0 20px rgba(14, 165, 233, 0.15);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.glass-panel-glow:hover {
-  border-color: var(--neon-blue);
-  box-shadow: var(--shadow-card), var(--shadow-neon);
-  transform: translateY(-3px);
-}
-
-/* Futuristic floating animation */
-@keyframes floatAnim {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-12px) rotate(1.5deg);
-  }
-}
-
-.animate-float {
-  animation: floatAnim 4.5s ease-in-out infinite;
-}
-
-/* Pulse glow effect */
-@keyframes pulseGlow {
-  0%, 100% {
-    box-shadow: 0 0 15px rgba(14, 165, 233, 0.5), 0 0 30px rgba(14, 165, 233, 0.2);
-  }
-  50% {
-    box-shadow: 0 0 25px rgba(14, 165, 233, 0.8), 0 0 45px rgba(6, 182, 212, 0.4);
-  }
-}
-
-.pulse-glow {
-  animation: pulseGlow 2.5s infinite;
-}
-
-/* Shimmer shine effect for CTA buttons */
-.btn-shine {
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-shine::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -60%;
-  width: 40%;
-  height: 200%;
-  background: linear-gradient(
-    60deg,
-    transparent 20%,
-    rgba(255, 255, 255, 0.45) 50%,
-    transparent 80%
-  );
-  transform: rotate(25deg);
-  animation: shineMove 3.5s infinite;
-}
-
-@keyframes shineMove {
-  0% { left: -60%; }
-  30%, 100% { left: 140%; }
-}
-
-/* Badge styles */
-.badge-neon {
-  background: rgba(14, 165, 233, 0.15);
-  color: var(--neon-blue-light);
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  border-radius: 9999px;
-  padding: 0.35rem 0.85rem;
-  font-size: 0.875rem;
-  font-weight: 700;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.badge-gold {
-  background: rgba(245, 158, 11, 0.15);
-  color: #fbbf24;
-  border: 1px solid rgba(245, 158, 11, 0.35);
-  border-radius: 9999px;
-  padding: 0.35rem 0.85rem;
-  font-size: 0.875rem;
-  font-weight: 700;
-}
-
-/* Live sales popup notification */
-#live-toast {
-  position: fixed;
-  bottom: 85px;
-  right: 20px;
-  z-index: 45;
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  transform: translateX(120%);
-  opacity: 0;
-  pointer-events: none;
-}
-
-#live-toast.show {
-  transform: translateX(0);
-  opacity: 1;
-  pointer-events: auto;
-}
-
-@media (max-width: 640px) {
-  #live-toast {
-    bottom: 80px;
-    right: 12px;
-    left: 12px;
-  }
-}
-
-/* Custom form inputs */
-.custom-input {
+/* حقول الإدخال النظيفة */
+.form-input {
   width: 100%;
-  background: rgba(15, 23, 42, 0.9);
-  border: 1.5px solid rgba(56, 189, 248, 0.25);
-  border-radius: 0.85rem;
-  padding: 0.85rem 1.15rem;
-  color: #fff;
-  font-size: 1rem;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 0.65rem;
+  padding: 0.75rem 1rem;
+  color: #0f172a;
+  font-size: 0.95rem;
   font-family: inherit;
-  transition: all 0.25s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
   outline: none;
 }
 
-.custom-input:focus {
-  border-color: var(--neon-blue);
-  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.25);
-  background: rgba(15, 23, 42, 1);
+.form-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
 }
 
-.custom-input::placeholder {
-  color: var(--text-dim);
+.form-input::placeholder {
+  color: #94a3b8;
 }
 
-/* Radio bundle cards */
-.bundle-option {
+/* مصغرات الصور في المعرض */
+.gallery-thumb {
   cursor: pointer;
-  border: 2px solid rgba(56, 189, 248, 0.2);
-  background: rgba(15, 23, 42, 0.6);
-  border-radius: 1rem;
-  padding: 1rem;
-  transition: all 0.25s ease;
-  position: relative;
-}
-
-.bundle-option.active {
-  border-color: var(--neon-blue);
-  background: rgba(14, 165, 233, 0.12);
-  box-shadow: 0 0 20px rgba(14, 165, 233, 0.25);
-}
-
-/* Gallery thumbnails */
-.thumb-item {
-  cursor: pointer;
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  border-radius: 0.75rem;
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
   overflow: hidden;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
+  background: #f1f5f9;
 }
 
-.thumb-item.active {
-  border-color: var(--neon-blue);
-  box-shadow: 0 0 15px rgba(14, 165, 233, 0.5);
-  transform: scale(1.05);
+.gallery-thumb.active {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #070d19;
-}
-::-webkit-scrollbar-thumb {
-  background: #1e293b;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #0ea5e9;
+/* بطاقات اختيار الباقات */
+.bundle-select-card {
+  cursor: pointer;
+  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 0.85rem 1rem;
+  transition: all 0.2s ease;
 }
 
-/* Sticky mobile bar safe padding */
-.pb-mobile-bar {
+.bundle-select-card:hover {
+  border-color: #94a3b8;
+}
+
+.bundle-select-card.active {
+  border-color: #2563eb;
+  background-color: #eff6ff;
+}
+
+/* مسافة أمان للشريط السفلي على الموبايل */
+.has-mobile-bar {
   padding-bottom: 5.5rem;
 }
 
 @media (min-width: 768px) {
-  .pb-mobile-bar {
+  .has-mobile-bar {
     padding-bottom: 2rem;
   }
 }
