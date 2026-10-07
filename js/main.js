@@ -5,14 +5,14 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   const WHATSAPP_NUMBER = "201125611779";
-  const BASE_PRICE = 725;
+  const BASE_PRICE = 775;
   const CAIRO_SHIPPING = 100;
   const OUTSIDE_CAIRO_SHIPPING = 150;
 
   const BUNDLES = {
-    1: { qty: 1, price: 725, title: "طائرة واحدة (725 ج.م)" },
-    2: { qty: 2, price: 1350, title: "طائرتين - عرض التوفير (1350 ج.م)" },
-    3: { qty: 3, price: 1950, title: "3 طائرات - عرض العائلة (1950 ج.م)" }
+    1: { qty: 1, price: 775, title: "طائرة واحدة (775 ج.م)" },
+    2: { qty: 2, price: 1450, title: "طائرتين - عرض التوفير (1450 ج.م)" },
+    3: { qty: 3, price: 2100, title: "3 طائرات - عرض العائلة (2100 ج.م)" }
   };
 
   let currentQty = 1;
